@@ -137,15 +137,16 @@ public struct Config {
     } ()
     
     static private(set) var bundle: Bundle? = {
-        guard let bundle = Bundle(identifier: bundleIdentifier) else {
-            return nil
-        }
-        
-        if let url = bundle.url(forResource: "Resource", withExtension: "bundle") {
-            let bundle = Bundle(url: url)
-            return bundle
-        }
-        return nil
+//        guard let bundle = Bundle(identifier: bundleIdentifier) else {
+//            return nil
+//        }
+//
+        return Bundle(for: CropViewController.self)
+//        if let url = bundle.url(forResource: "Resource", withExtension: "bundle") {
+//            let bundle = Bundle(url: url)
+//            return bundle
+//        }
+//        return nil
     } ()
     
     public init() {
